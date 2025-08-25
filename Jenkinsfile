@@ -16,9 +16,9 @@ pipeline {
         // The 'Checkout' stage has been removed because Jenkins
         // automatically checks out the repository to get the Jenkinsfile.
 
-        stage('Maven Build') {
+        stage('Gradle build') {
             steps {
-                sh 'mvn clean package -Dcheckstyle.skip=true'
+               sh './gradlew clean build'
             }
         }
 
