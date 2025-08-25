@@ -24,7 +24,7 @@ pipeline {
 
         stage('Archive Artifact') {
             steps {
-                sh 'mv target/*.jar target/sunnyspringpetclinic.jar'
+                sh 'cp build/libs/spring-petclinic-3.5.0.jar build/libs/sunnyspringpetclinic.jar'
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
