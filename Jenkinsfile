@@ -6,10 +6,10 @@ pipeline {
     }
 
     environment {
-        ARM_CLIENT_ID     = credentials('azure-sp')
-        ARM_CLIENT_SECRET = credentials('azure-sp')
+        ARM_CLIENT_ID     = '7b66f0b0-c43e-4682-9024-666bf29bda03'
+        ARM_CLIENT_SECRET = 'cnE8Q~eYwUibzVv7llCNXxM8IgR_LQbmw2fj2csF'
         ARM_SUBSCRIPTION_ID = '75279c7b-6f2e-4e76-ae48-b6aeab569b34'
-        ARM_TENANT_ID     = credentials('azure-tenant')
+        ARM_TENANT_ID     = '766ef0d9-c1c7-4a7f-93ca-5e74124c5fc9'
     }
 
     stages {
