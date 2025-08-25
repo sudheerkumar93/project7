@@ -24,7 +24,7 @@ pipeline {
 
         stage('Archive Artifact') {
             steps {
-                sh 'mv target/*.jar target/luckyspringpetclinic.jar'
+                sh 'mv target/*.jar target/sunnyspringpetclinic.jar'
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
@@ -65,7 +65,7 @@ pipeline {
             steps {
                 sh '''
                     az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
-                    az webapp deploy --resource-group john --name lucky-web-app --type jar --src-path target/luckyspringpetclinic.jar
+                    az webapp deploy --resource-group pipeline --name sunny-web-app-jenkins-3 --type jar --src-path target/sunnyspringpetclinic.jar
                 '''
             }
         }
