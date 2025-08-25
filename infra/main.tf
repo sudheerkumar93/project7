@@ -12,7 +12,7 @@ provider "azurerm" {
   subscription_id = "75279c7b-6f2e-4e76-ae48-b6aeab569b34"
   tenant_id       = "766ef0d9-c1c7-4a7f-93ca-5e74124c5fc9"
   client_id       = "7b66f0b0-c43e-4682-9024-666bf29bda03"
-  client_secret   = "a2c6378f-42fb-478e-8bc4-a058d67e791c"
+  client_secret   = "cnE8Q~eYwUibzVv7llCNXxM8IgR_LQbmw2fj2csF"
 }
 
 # Service Plan (must exist or be created)
