@@ -13,11 +13,8 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/sudheerkumar93/project7'
-            }
-        }
+        // The 'Checkout' stage has been removed because Jenkins
+        // automatically checks out the repository to get the Jenkinsfile.
 
         stage('Maven Build') {
             steps {
