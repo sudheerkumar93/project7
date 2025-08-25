@@ -16,15 +16,15 @@ pipeline {
         // The 'Checkout' stage has been removed because Jenkins
         // automatically checks out the repository to get the Jenkinsfile.
 
-        stage('Gradle build') {
+        stage('Maven') {
             steps {
-               sh './gradlew clean build'
+                sh 'mvn clean package -Dcheckstyle.skip=true'
             }
         }
 
         stage('Archive Artifact') {
             steps {
-                sh 'cp build/libs/spring-petclinic-3.5.0.jar build/libs/sunnyspringpetclinic.jar'
+                 sh 'mv target/*.jar target/sunnyspringpetclinic.jar'
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
