@@ -16,7 +16,7 @@ provider "azurerm" {
 resource "azurerm_service_plan" "plan" {
   name                = "sunny-service-plan"
   location            = "canadacentral"
-  resource_group_name = "pipeline"   # existing RG
+  resource_group_name = "pipeline"    # existing RG
   os_type             = "Linux"
   sku_name            = "S1"
 }
@@ -25,11 +25,9 @@ resource "azurerm_service_plan" "plan" {
 resource "azurerm_linux_web_app" "web" {
   name                = "sunny-web-app-jenkins-3"
   location            = "canadacentral"
-  resource_group_name = "pipeline"   # existing RG
+  resource_group_name = "pipeline"    # existing RG
   service_plan_id     = azurerm_service_plan.plan.id
 
-  site_config {
-    linux_fx_version = "JAVA|21"
-  }
+  site_config {} # Removed the linux_fx_version as it's auto-configured
 }
 
